@@ -73,4 +73,11 @@ class QuoteController extends Controller
         return Redirect::route('index_quote');
     }
 
+    public function filter(Request $request, Quote $quote)
+    {
+        $quote = Quote::where('id', $request->input('input_numb'))
+        ->get();
+        return view('hasil', compact('quote'));
+    }
+
 }

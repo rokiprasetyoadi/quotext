@@ -31,3 +31,5 @@ Route::middleware(['admin'])->group(function() {
     Route::patch('/quote/{quote}/update', [QuoteController::class, 'update_quote'])->name('update_quote');
     Route::delete('/quote/{quote}', [QuoteController::class, 'delete_quote'])->name('delete_quote');
 });
+
+Route::post('/quote/filter', [QuoteController::class, 'filter'])->name('filter');
